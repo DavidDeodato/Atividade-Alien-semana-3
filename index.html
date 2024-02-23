@@ -10,11 +10,11 @@
 
 <body>
     <script>
-        // o que acontece aqui?
+        // definindo a altura e a largura da tela do jogo
         const larguraJogo = 700;
         const alturaJogo = 850;
 
-        // o que essa parte faz?
+        // definindo as configurações iniciais do phaser que vou usar
         const config = {
             type: Phaser.AUTO,
             width: larguraJogo,
@@ -40,10 +40,10 @@ physics: {
          }
         };
 
-        // o que acontece aqui?
+       // criando de uma instância do objeto Phaser.Game com base na configuração
         const game = new Phaser.Game(config);
 
-        //adicionando a variável do alienigena e das teclas
+        //adicionando as variáveis presentes no jogo
 
             var alienigena;
             var teclado;
@@ -142,7 +142,7 @@ physics: {
        //sem movimentação no eixo X
        else{alienigena.setVelocityX(0);
     }
-
+      //quando a tecla 'up' for selecionada, o player(alienigena) irá subir no eixo y
      if(teclado.up.isDown){
         alienigena.setVelocityY(-200);
         ativarturbo();
@@ -157,15 +157,17 @@ physics: {
      this.physics.add.collider(moeda,bloco);
 
      bloco.body.setSize (320, 165, true)
-
+       
      
         }
-
+   // criando a função ativarturbo usado no if acima
         function ativarturbo(){
             fogo.setVisible(true);
 
         }
 
+
+ // criando a função semturbo usados no if acima
         function semturbo(){
             fogo.setVisible(false);
         }
